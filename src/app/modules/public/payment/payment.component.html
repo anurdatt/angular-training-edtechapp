@@ -1,0 +1,41 @@
+<h2>Order Details</h2>
+<hr />
+<div class="row">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">Order ({{cart.items.length}})</div>
+            <div class="card-body">
+                <div class="row" *ngFor="let item of cart.items; let index=index">
+                    <div class="col-sm-3">
+                        <img [src]="item.imageUrl" [alt]="item.name" class="img-fluid" />
+                    </div>
+                    <div class="col-sm-6">
+                        <h4>{{item.name}}</h4>
+                    </div>
+                    <div class="col-sm-3 float-end">
+                        {{item.unitPrice | currency:'INR'}}
+                    </div>
+                    <hr class="p-3 mt-2" *ngIf="index<cart.items.length-1" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header">Cart Summary</div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between">Amount
+                        <span>{{cart.total|currency:'INR'}}</span></li>
+                    <li class="list-group-item d-flex justify-content-between">Tax({{cart.taxRate}}) <span>+{{cart.tax |
+                            currency:'INR'}}</span></li>
+                    <li class="list-group-item d-flex justify-content-between"><strong>Total Amount</strong>
+                        <span>{{cart.grandTotal | currency:'INR'}}</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-3">
+            <button class="btn btn-primary" *ngIf="user!=undefined" (click)="PayWithRazorPay()">Pay Now</button>
+        </div>
+    </div>
+</div>

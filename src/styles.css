@@ -1,1 +1,68 @@
 /* You can add global styles to this file, and also import other style files */
+.logo {
+    height: 44px;
+ }
+ 
+ 
+ .list-lessons ul li span {
+    float: right;
+ }
+ .text-justify{
+    text-align: justify;
+ }
+ .cartCounter{
+    background-color: #ec5252;
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.43;
+    margin: -6px 0 0 5px;
+    padding: 0px 7px;
+    position: absolute;
+    white-space: nowrap;
+    z-index: 1;
+ }
+ #toastCart{
+    bottom: 0;
+    right: 0;
+    z-index: 100;
+    position: fixed;
+ }
+ footer {
+    background: #222e3a;
+    color: #e6e4e4;
+    padding: 25px 0;
+    width: 100%;
+ }
+ 
+ 
+ footer a,
+ footer:visited {
+    color: #a5c7ec;
+ }
+ 
+ 
+ html {
+    position: relative;
+    min-height: 100%;
+ }
+ 
+ 
+ body {
+    margin-bottom: 250px !important;
+ }
+ 
+ 
+ @media(min-width:768px) {
+    body {
+        margin-bottom: 250px !important;
+    }
+ 
+ 
+    footer {
+        position: absolute;
+        bottom: 0;
+    }
+ }
+ 

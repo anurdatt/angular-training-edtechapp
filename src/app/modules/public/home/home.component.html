@@ -1,0 +1,38 @@
+<div style="background-color: lightskyblue;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-5 mb-2">
+                <h1>Learn. Build. Empower.</h1>
+                <p class="mt-4">
+                    We believe in empowering you with the right skills to succeed in your career.
+                </p>
+                <p>
+                    <button class="btn btn-primary mt-4">Get Started</button>
+                </p>
+            </div>
+            <div class="col-md-4 mt-4 mb-2">
+                <img src="https://dotnettrickscloud.blob.core.windows.net/images/learn-to-code.svg" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h2 class="mt-5 mb-3">Our Courses</h2>
+    <hr/>
+    <div class="row">
+        <div *ngFor="let item of courses" class="col-sm-4 mb-3">
+            <div class="card">
+                <img class="card-img-top" [src]="item.imageUrl" [alt]="item.name" />
+                <div class="card-body">
+                    <h4 class="card-title">{{item.name}}</h4>
+                    <p class="card-text">{{item.summary}}</p>
+                    <p>
+                        <button class="btn btn-primary" (click)="AddToCart(item)">Add To Cart</button>
+                    </p>
+                </div>
+            </div>            
+        </div>
+    </div>
+</div>
